@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Datacrate Motors</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+            color:#333;
+        }
+
+        /* HEADER */
+        header{
+            background:linear-gradient(to right,#0d1b2a,#1b263b);
+            color:white;
+            padding:20px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            font-size:30px;
+            font-weight:bold;
+            color:#00b4d8;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00b4d8;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            height:90vh;
+            background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            position:relative;
+        }
+
+        .hero::before{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+        }
+
+        .hero-content{
+            position:relative;
+            color:white;
+            z-index:1;
+            max-width:700px;
+        }
+
+        .hero-content h1{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            line-height:1.6;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#00b4d8;
+            color:white;
+            padding:15px 35px;
+            border:none;
+            border-radius:30px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#0077b6;
+            transform:scale(1.05);
+        }
+
+        /* SECTION TITLE */
+        .section-title{
+            text-align:center;
+            margin:70px 0 40px;
+        }
+
+        .section-title h2{
+            font-size:40px;
+            color:#1b263b;
+        }
+
+        /* CAR CARDS */
+        .cars-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+            padding:0 8% 70px;
+        }
+
+        .car-card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.4s;
+        }
+
+        .car-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .car-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .car-info{
+            padding:20px;
+        }
+
+        .car-info h3{
+            margin-bottom:10px;
+            color:#0d1b2a;
+        }
+
+        .price{
+            color:#00b4d8;
+            font-size:22px;
+            font-weight:bold;
+            margin:15px 0;
+        }
+
+        .car-info button{
+            width:100%;
+            padding:12px;
+            border:none;
+            background:#1b263b;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .car-info button:hover{
+            background:#00b4d8;
+        }
+
+        /* ABOUT */
+        .about{
+            background:white;
+            padding:70px 8%;
+            text-align:center;
+        }
+
+        .about p{
+            max-width:850px;
+            margin:auto;
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        /* CONTACT */
+        .contact{
+            background:#1b263b;
+            color:white;
+            padding:60px 8%;
+            text-align:center;
+        }
+
+        .contact h2{
+            margin-bottom:20px;
+            font-size:38px;
+        }
+
+        .contact p{
+            margin:10px 0;
+            font-size:18px;
+        }
+
+        footer{
+            background:#0d1b2a;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            nav ul{
+                gap:12px;
+            }
+
+            nav ul li a{
+                font-size:14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Datacrate Motors</div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cars</a></li>
+                <li><a href="#">Auctions</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Drive Your Dream Car Today</h1>
+
+            <p>
+                Datacrate Motors offers quality vehicles at affordable prices.
+                Explore luxury cars, SUVs, and family vehicles from trusted auctions.
+            </p>
+
+            <button class="btn" onclick="showMessage()">
+                Explore Cars
+            </button>
+        </div>
+    </section>
+
+    <!-- FEATURED CARS -->
+    <div class="section-title">
+        <h2>Featured Cars</h2>
+    </div>
+
+    <section class="cars-container">
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop" alt="BMW Car">
+
+            <div class="car-info">
+                <h3>BMW X6</h3>
+                <p>Luxury SUV with premium comfort and powerful performance.</p>
+                <div class="price">ksh435,000</div>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop" alt="Mercedes">
+
+            <div class="car-info">
+                <h3>Mercedes Benz</h3>
+                <p>Elegant design with advanced technology and smooth driving.</p>
+                <div class="price">ksh642,000</div>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Range Rover">
+
+            <div class="car-info">
+                <h3>Range Rover Sport</h3>
+                <p>Stylish and powerful SUV designed for luxury adventures.</p>
+                <div class="price">ksh555,000</div>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="section-title">
+            <h2>About Datacrate Motors</h2>
+        </div>
+
+        <p>
+            Datacrate Motors is a trusted car auction and dealership company
+            dedicated to providing high-quality vehicles at competitive prices.
+            We connect customers with reliable cars, luxury vehicles, SUVs,
+            and commercial automobiles through a transparent and customer-focused process.
+        </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+
+        <p>📞 Phone: 0720 33 13 65</p>
+        <p>📧 Email: info@datacratemotors.com</p>
+        <p>📍 Location: Nairobi, Kenya</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Datacrate Motors. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showMessage(){
+            alert("Welcome to Datacrate Motors! Browse our latest car collection.");
+        }
+    </script>
+
+</body>
+</html>
